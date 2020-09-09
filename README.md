@@ -2,8 +2,7 @@
 
 ## Requirements
 
-- AWS Account
-- Route53 Domain Name and Domain Zone
+- Linode Account and Access Token
 - Terraform 13.0+
 
 ## Pre-Install
@@ -11,27 +10,6 @@
 Adjust configurations:
 
 - [`vars/variables.tfvars`](vars/variables.tfvars)
-
-## Infrastructure
-
-Infrastructure creation is done in multiple steps:
-
-1. Bootstrapping - creating shared resources, like security groups and SSH keys.
-2. Provisioning - creating actual bigbluebutton and scalelite servers
-
-### Bootstrapping
-
-Initiate a new Terraform project in [`bootstrap`](bootstrap) directory:
-
-```sh
-terraform init
-```
-
-Plan and apply your changes, provisionning the resources:
-
-```sh
-terraform apply -var-file=../vars/variables.tfvars
-```
 
 ### Provisioning
 
