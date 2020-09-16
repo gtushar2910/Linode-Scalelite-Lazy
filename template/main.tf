@@ -2,11 +2,8 @@ terraform {
   required_version = ">=0.13.0"
 }
 
-provider "aws" {
-  profile    = var.aws_profile
-  region     = var.aws_region
-  access_key = file("../access_key")
-  secret_key = file("../secret_key")
+provider "linode" {
+  token = file("../token")
 }
 
 module "bigbluebutton_instance" {
